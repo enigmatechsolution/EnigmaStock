@@ -1,0 +1,52 @@
+﻿@using EnigmaStock.Models;
+@model Purchase
+
+
+<div class="container p-3">
+
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">New Purchase</h2>
+
+        </div>
+
+    </div>
+
+
+    <br />
+
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="SupplierId"></label>
+            <select asp-for="SupplierId" class="form-control">
+                <option value="">...Select Supplier</option>
+
+                @foreach (var supplier in ViewBag.Suppliers)
+                        {
+                            <option value="@supplier.Id">@supplier.Name</option>
+                        }
+
+            </select>
+
+            <span asp-validation-for="SupplierId" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ReferenceNumber"></label>
+            <input asp-for="ReferenceNumber" class="form-control" />
+            <span asp-validation-for="ReferenceNumber" class="text-danger"></span>
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="PurchaseDate"></label>
+            <input asp-for="PurchaseDate" class="form-control" type="date" />
+            <span asp-validation-for="PurchaseDate" class="text-danger"></span>
+
+        </div>
+       
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a asp-controller="Purchase" asp-action="Index" class="btn btn-secondary">Back To List</a>
+
+    </form>
+</div>

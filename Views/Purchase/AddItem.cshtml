@@ -1,0 +1,55 @@
+﻿@using EnigmaStock.Models
+@model PurchaseItem
+
+<div class="container">
+
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Add Purchase Item</h2>
+
+        </div>
+
+    </div>
+    <br />
+
+    <form method="post">
+
+        <input asp-for="PurchaseId" type="hidden"/>
+
+        <div class="mb-3">
+            <label asp-for="ProductId"></label>
+            <select asp-for="ProductId" class="form-control">
+                <option value="">...Select Product...</option>
+
+                @foreach(var product in ViewBag.Products)
+                        {
+                            <option value="@product.Id">@product.Name</option>
+                        }
+
+            </select>
+            <span asp-validation-for="product" class="text-danger"></span>
+
+        </div>
+
+
+        <div class="mb-3">
+            <label asp-for="Quantity"></label>
+            <input asp-for="Quantity" class="form-control" type="nnumber" min="1"/>
+            <span asp-validation-for="Quantity" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="CostPrice"></label>
+            <input asp-for="CostPrice" class="form-control" type="number" min="1" />
+            <span asp-validation-for="CostPrice" class="text-danger"></span>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Add Item</button>
+        <a asp-controller="Purchase" asp-action="Details" asp-route-id="@Model.PurchaseId" class="btn btn-secondary">Back To Purchase</a>
+
+
+    </form>
+
+
+</div>

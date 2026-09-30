@@ -1,0 +1,49 @@
+﻿@using EnigmaStock.Models;
+@model List<Category>
+
+
+    <div class="container p-3">
+        <div class="row pt-4">
+            <h2 class="text-primary">Category List</h2>
+            </div>
+
+    <div class="col-6 text-end">
+        <a asp-controller="Category" asp-action="Create">Create New Category</a>
+
+    </div>
+</div>
+<br/>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Category Name</th>
+            <th>Display Order</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+
+<tbody> 
+@foreach (var category in Model)
+
+{
+    <tr>
+        <td>@category.Name</td>
+        <td>@category.DisplayOrder</td>
+        
+
+        <td>
+            <a asp-controller="Category" asp-action="Edit" asp-route-Id="@category.Id" class="btn btn-primary">Edit
+
+            </a>
+            
+           
+           <a  asp-controller="Category" asp-action="Delete" asp-route-Id="@category.Id" class="btn btn-danger"> Delete
+
+           </a>
+        </td>
+    </tr>
+        }
+    </tbody>
+</table>

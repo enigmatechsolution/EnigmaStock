@@ -1,0 +1,704 @@
+﻿@model EnigmaStock.Models.viewModels.DashboardViewModel
+
+
+<div class="container-fluid">
+
+    <!-- ========================= -->
+    <!-- DASHBOARD HEADER -->
+    <!-- ========================= -->
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h2 class="fw-bold mb-1">
+                EnigmaStock Dashboard
+            </h2>
+
+            <p class="text-muted mb-0">
+                Overview of your business operations and inventory.
+            </p>
+        </div>
+
+        <a asp-controller="Sale"
+           asp-action="Create"
+           class="btn btn-primary">
+
+            <i class="fas fa-plus me-1"></i>
+
+            New Sale
+
+        </a>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- KPI CARDS -->
+    <!-- ========================= -->
+
+    <div class="row g-4">
+
+
+        <!-- Categories -->
+
+        <div class="col-xl-3 col-md-6">
+
+            <div class="dashboard-kpi-card">
+
+                <div class="kpi-icon bg-primary-subtle text-primary">
+
+                    <i class="fas fa-tags"></i>
+
+                </div>
+
+                <div class="kpi-content">
+
+                    <span class="kpi-label">
+                        Product Categories
+                    </span>
+
+                    <h3>
+                        @Model.CategoryCount
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Products -->
+
+        <div class="col-xl-3 col-md-6">
+
+            <div class="dashboard-kpi-card">
+
+                <div class="kpi-icon bg-success-subtle text-success">
+
+                    <i class="fas fa-box"></i>
+
+                </div>
+
+                <div class="kpi-content">
+
+                    <span class="kpi-label">
+                        Products
+                    </span>
+
+                    <h3>
+                        @Model.ProductCount
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Suppliers -->
+
+        <div class="col-xl-3 col-md-6">
+
+            <div class="dashboard-kpi-card">
+
+                <div class="kpi-icon bg-info-subtle text-info">
+
+                    <i class="fas fa-truck"></i>
+
+                </div>
+
+                <div class="kpi-content">
+
+                    <span class="kpi-label">
+                        Suppliers
+                    </span>
+
+                    <h3>
+                        @Model.SupplierCount
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Purchases -->
+
+        <div class="col-xl-3 col-md-6">
+
+            <div class="dashboard-kpi-card">
+
+                <div class="kpi-icon bg-warning-subtle text-warning">
+
+                    <i class="fas fa-cart-shopping"></i>
+
+                </div>
+
+                <div class="kpi-content">
+
+                    <span class="kpi-label">
+                        Purchase Records
+                    </span>
+
+                    <h3>
+                        @Model.PurchaseCount
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Sales -->
+
+        <div class="col-xl-3 col-md-6">
+
+            <div class="dashboard-kpi-card">
+
+                <div class="kpi-icon bg-primary-subtle text-primary">
+
+                    <i class="fas fa-receipt"></i>
+
+                </div>
+
+                <div class="kpi-content">
+
+                    <span class="kpi-label">
+                        Sales
+                    </span>
+
+                    <h3>
+                        @Model.SaleCount
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Completed Sales -->
+        <div class="col-xl-3 col-md-6">
+            <div class="dashboard-kpi-card">
+                <div class="kpi-icon bg-success-subtle text-success">
+                    <i class="fas fa-circle-check"></i>
+                </div>
+
+                <div class="kpi-content">
+                    <span class="kpi-label">Completed Sales</span>
+                    <h3>@Model.CompletedSaleCount</h3>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- Average Sale Value -->
+        <div class="col-xl-3 col-md-6">
+            <div class="dashboard-kpi-card">
+                <div class="kpi-icon bg-info-subtle text-info">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+
+                <div class="kpi-content">
+                    <span class="kpi-label">Average Sale Value</span>
+                    <h3>
+                        ₦@Model.AverageSaleValue.ToString("N0")
+                    </h3>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Low Stock -->
+
+        <div class="col-xl-3 col-md-6">
+
+            <div class="dashboard-kpi-card">
+
+                <div class="kpi-icon bg-danger-subtle text-danger">
+
+                    <i class="fas fa-triangle-exclamation"></i>
+
+                </div>
+
+                <div class="kpi-content">
+
+                    <span class="kpi-label">
+                        Low Stock
+                    </span>
+
+                    <h3 class="@(Model.LowStockCount > 0 ? "text-danger" : "text-success")">
+
+                        @Model.LowStockCount
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- SALES PERFORMANCE -->
+    <div class="card dashboard-section-card mt-4">
+        <div class="card-header">
+            <div>
+                <h5 class="mb-1 fw-bold">
+                    Sales Performance
+                </h5>
+
+                <small class="text-dark">
+                    Revenue generated from completed sales
+                </small>
+            </div>
+
+            <div class="text-end">
+                <small class="text-muted d-block">
+                    Total Revenue
+                </small>
+
+                <span class="sales-revenue-callout">
+                    ₦@Model.TotalRevenue.ToString("N2")
+                </span>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div style="height: 320px;">
+                <canvas id="salesTrendChart"></canvas>
+            </div>
+            <script>
+                            const chartScript = document.createElement('script');
+
+                            chartScript.src =
+                                'https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js';
+
+                            chartScript.onload = function() {
+
+                                console.log("Chart.js loaded:", typeof Chart);
+
+                                const salesLabels = @Html.Raw(
+                                                                    System.Text.Json.JsonSerializer.Serialize(
+                                                                            Model.SalesTrend.Select(x => x.Month)
+                                                            )
+                                                            );
+
+                                const salesRevenue = @Html.Raw(
+                                                                    System.Text.Json.JsonSerializer.Serialize(
+                                                                            Model.SalesTrend.Select(x => x.Revenue)
+                                                            )
+                                                            );
+
+                                const salesChart =
+                                    document.getElementById('salesTrendChart');
+
+                                new Chart(salesChart, {
+                                    type: 'line',
+
+                                    data: {
+                                        labels: salesLabels,
+
+                                        datasets: [{
+                                            label: 'Revenue',
+                                            data: salesRevenue,
+                                            borderWidth: 3,
+                                            tension: 0.35,
+                                            fill: true
+                                        }]
+                                    },
+
+                                    options: {
+                                        responsive: true,
+                                        maintainAspectRatio: false,
+
+                                        plugins: {
+                                            legend: {
+                                                display: false
+                                            },
+
+                                            tooltip: {
+                                                callbacks: {
+                                                    label: function(context) {
+                                                        return '₦' +
+                                                            context.parsed.y.toLocaleString(
+                                                                'en-NG',
+                                                                {
+                                                                    minimumFractionDigits: 2
+                                                                }
+                                                            );
+                                                    }
+                                                }
+                                            }
+                                        },
+
+                                        scales: {
+                                            y: {
+                                                beginAtZero: true,
+
+                                                ticks: {
+                                                    callback: function(value) {
+                                                        return '₦' +
+                                                            Number(value).toLocaleString(
+                                                                'en-NG'
+                                                            );
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                });
+                            };
+
+                            chartScript.onerror = function() {
+                                console.error("Chart.js failed to load.");
+                            };
+
+                            document.head.appendChild(chartScript);
+            </script>
+        </div>
+    </div>
+
+
+
+
+    <!-- ========================= -->
+    <!-- LOW STOCK -->
+    <!-- ========================= -->
+
+    <div class="card dashboard-section-card mt-4">
+
+        <div class="card-header">
+
+            <div>
+
+                <h5 class="mb-1 fw-bold">
+                    Low Stock Products
+                </h5>
+
+                <small class="text-dark">
+                    Products at or below their reorder level
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="card-body p-0">
+
+            @if (Model.LowStockProducts.Any())
+            {
+
+                <div class="table-responsive">
+
+                    <table class="table dashboard-table mb-0">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Product
+                                </th>
+
+                                <th>
+                                    Current Stock
+                                </th>
+
+                                <th>
+                                    Reorder Level
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            @foreach (var product in Model.LowStockProducts)
+                            {
+
+                                <tr>
+
+                                    <td class="fw-semibold">
+
+                                        @product.Name
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <span class="stock-danger">
+
+                                            @product.Quantity
+
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+
+                                        @product.ReorderLevel
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <span class="badge bg-danger-subtle text-danger">
+
+                                            Low Stock
+
+                                        </span>
+
+                                    </td>
+
+                                </tr>
+
+                            }
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            }
+            else
+            {
+
+                <div class="empty-state">
+
+                    <div class="empty-state-icon text-success">
+
+                        <i class="fas fa-circle-check"></i>
+
+                    </div>
+
+                    <h6>
+                        Inventory looks good
+                    </h6>
+
+                    <p>
+                        No products are currently below their reorder level.
+                    </p>
+
+                </div>
+
+            }
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ========================= -->
+    <!-- RECENT SALES -->
+    <!-- ========================= -->
+
+    <div class="card dashboard-section-card mt-4">
+
+        <div class="card-header">
+
+            <div>
+
+                <h5 class="mb-1 fw-bold">
+                    Recent Sales
+                </h5>
+
+                <small class="text-dark">
+                    Latest sales transactions
+                </small>
+
+            </div>
+
+
+            <a asp-controller="Sale"
+               asp-action="Index"
+               class="btn btn-sm btn-outline-primary">
+
+                View All
+
+                <i class="fas fa-arrow-right ms-1"></i>
+
+            </a>
+
+        </div>
+
+
+        <div class="card-body p-0">
+
+            @if (Model.RecentSales.Any())
+            {
+
+                <div class="table-responsive">
+
+                    <table class="table dashboard-table mb-0">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Invoice
+                                </th>
+
+                                <th>
+                                    Customer
+                                </th>
+
+                                <th>
+                                    Total Amount
+                                </th>
+
+                                <th>
+                                    Date
+                                </th>
+
+                                <th>
+                                    Payment
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            @foreach (var sale in Model.RecentSales)
+                            {
+
+                                <tr>
+
+                                    <td class="fw-semibold">
+
+                                        @sale.InvoiceNumber
+
+                                    </td>
+
+
+                                    <td>
+
+                                        @(string.IsNullOrEmpty(sale.CustomerName)
+                                            ? "Walk-in Customer"
+                                            : sale.CustomerName)
+
+                                    </td>
+
+
+                                    <td class="fw-semibold">
+
+                                        ₦@sale.TotalAmount.ToString("N2")
+
+                                    </td>
+
+
+                                    <td>
+
+                                        @sale.SaleDate.ToString("dd MMM yyyy, hh:mm:tt")
+
+                                    </td>
+
+
+                                    <td>
+
+                                        @sale.PaymentMethod
+
+                                    </td>
+
+
+                                    <td>
+
+                                        @if (sale.Status == "Completed")
+                                        {
+                                            <span class="badge bg-success-subtle text-success">
+                                                Completed
+                                            </span>
+                                        }
+                                        else if (sale.Status == "Pending")
+                                        {
+                                            <span class="badge bg-warning-subtle text-warning">
+                                                Pending
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-warning-subtle text-danger">
+                                                @sale.Status
+                                            </span>
+                                        }
+
+                                    </td>
+
+                                </tr>
+
+                            }
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            }
+            else
+            {
+
+                <div class="empty-state">
+
+                    <div class="empty-state-icon text-muted">
+
+                        <i class="fas fa-receipt"></i>
+
+                    </div>
+
+                    <h6>
+                        No sales transactions yet
+                    </h6>
+
+                    <p>
+                        Completed sales will appear here.
+                    </p>
+
+                </div>
+
+            }
+
+        </div>
+
+    </div>
+
+</div>
+

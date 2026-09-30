@@ -1,0 +1,19 @@
+﻿@model Category;
+@using EnigmaStock.Models;
+
+<h1>Create Category</h1>
+
+<form method="post">
+<div> 
+    <label>Name</label>
+    <Input asp-for="Name"/>
+
+</div>
+ <div>
+     <label>DisplayOrder</label>
+     <Input asp-for="DisplayOrder" />
+
+ </div>
+    <button type="submit">Create</button>
+
+</form>

@@ -1,0 +1,280 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container-fluid px-0">
+
+    ```
+    <!-- Hero Section -->
+    <section class="enigma-hero">
+        <div class="row align-items-center">
+
+            <div class="col-lg-7">
+                <div class="hero-content">
+
+                    <span class="hero-badge">
+                        <i class="fas fa-chart-line mr-2"></i>
+                        SMART BUSINESS MANAGEMENT
+                    </span>
+
+                    <h1>
+                        Run Your Business
+                        <span>With Clarity.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        EnigmaStock helps retail and distribution businesses manage
+                        inventory, sales, purchases and business performance from
+                        one simple platform.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a asp-controller="Dashboard"
+                           asp-action="Index"
+                           class="btn btn-primary btn-lg">
+                            <i class="fas fa-tachometer-alt mr-2"></i>
+                            Go to Dashboard
+                        </a>
+
+                        <a asp-controller="Sale"
+                           asp-action="Create"
+                           class="btn btn-outline-secondary btn-lg">
+                            <i class="fas fa-plus mr-2"></i>
+                            Create New Sale
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-5 d-none d-lg-block">
+                <div class="hero-visual">
+
+                    <div class="floating-card card-one">
+                        <i class="fas fa-boxes"></i>
+                        <div>
+                            <small>Inventory</small>
+                            <strong>Under Control</strong>
+                        </div>
+                    </div>
+
+                    <div class="floating-card card-two">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <div>
+                            <small>Sales</small>
+                            <strong>Tracked</strong>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-preview">
+                        <div class="preview-header">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <div class="preview-chart">
+                            <div class="chart-bar bar-1"></div>
+                            <div class="chart-bar bar-2"></div>
+                            <div class="chart-bar bar-3"></div>
+                            <div class="chart-bar bar-4"></div>
+                            <div class="chart-bar bar-5"></div>
+                        </div>
+
+                        <div class="preview-line"></div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Features Section -->
+    <section class="enigma-features">
+
+        <div class="text-center mb-5">
+            <span class="section-label">WHAT ENIGMASTOCK DOES</span>
+
+            <h2>
+                <span>
+                    Everything You Need to
+                Stay in Control.</span>
+            </h2>
+
+            <p class="section-description">
+                Bring your everyday business operations into one organized system.
+            </p>
+        </div>
+
+        <div class="row">
+
+            <!-- Inventory -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+
+                    <h4>Inventory Management</h4>
+
+                    <p>
+                        Track products, quantities, categories and reorder levels
+                        so you always know what is available.
+                    </p>
+
+                </div>
+            </div>
+
+            <!-- Sales -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+
+                    <h4>Sales Management</h4>
+
+                    <p>
+                        Create sales, generate invoices and keep your transactions
+                        organized and easy to monitor.
+                    </p>
+
+                </div>
+            </div>
+
+            <!-- Procurement -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+
+                    <h4>Procurement</h4>
+
+                    <p>
+                        Keep supplier and purchase records organized while
+                        maintaining better visibility over stock replenishment.
+                    </p>
+
+                </div>
+            </div>
+
+            <!-- Insights -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+
+                    <h4>Business Insights</h4>
+
+                    <p>
+                        Monitor sales activity, stock levels and important business
+                        indicators from your dashboard.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Business Section -->
+    <section class="enigma-business">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-7">
+
+                <span class="section-label">BUILT FOR GROWING BUSINESSES</span>
+
+                <h2>
+                    Less Guesswork.
+                    <span>More Visibility.</span>
+                </h2>
+
+                <p>
+                    Growing businesses need more than spreadsheets and scattered
+                    records. EnigmaStock brings essential sales and inventory
+                    information together so business owners and staff can work
+                    with better visibility.
+                </p>
+
+                <div class="business-points">
+
+                    <div>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Centralized inventory records</span>
+                    </div>
+
+                    <div>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Structured sales management</span>
+                    </div>
+
+                    <div>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Operational performance visibility</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-5">
+
+                <div class="business-card">
+
+                    <div class="business-card-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+
+                    <h3>From Data to Insight</h3>
+
+                    <p>
+                        Your business generates information every day.
+                        EnigmaStock helps turn that information into something
+                        you can understand and act on.
+                    </p>
+
+                    <div class="business-card-footer">
+                        <strong>EnigmaStock</strong>
+                        <span>Turning business data into insight.</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Final CTA -->
+    <section class="enigma-cta text-center">
+
+        <h2 class="text-light">Ready to take control?</h2>
+
+        <p>
+            Explore your business operations from the EnigmaStock dashboard.
+        </p>
+
+        <a asp-controller="Dashboard"
+           asp-action="Index"
+           class="btn btn-primary btn-lg">
+            <i class="fas fa-arrow-right mr-2"></i>
+            Open Dashboard
+        </a>
+
+    </section>
+    ```
+
+</div>

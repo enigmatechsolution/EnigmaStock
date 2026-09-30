@@ -1,0 +1,47 @@
+﻿@using EnigmaStock.Models;
+@model List<Supplier>
+
+    <div class="container">
+
+        <div class="row pt-4">
+            <div class="col-6">
+                <h2 class="text-primary">Supplier List</h2>
+
+            </div>
+
+        <div class="col-6 text-end">
+                <a asp-controller="Supplier" asp-action="Create" class="btn btn-primary">Add Supplier
+
+                </a>
+            </div>
+        </div>
+
+
+        <table class="table table-bordered table-striped" >
+
+            <thead>
+                <tr>
+                    <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var supplier in Model)
+            {
+                <tr>
+                    <td>@supplier.Name</td>
+                    <td>@supplier.Phone</td>
+                    <td>@supplier.Email</td>
+                    <td>@supplier.Address</td>
+                    <td><a asp-controller="Supplier" asp-action="Edit" asp-route-id="@supplier.Id" class="btn btn-primary">Edit</a></td>
+                </tr>
+            }
+
+            </tbody>
+        </table>
+
+    </div>

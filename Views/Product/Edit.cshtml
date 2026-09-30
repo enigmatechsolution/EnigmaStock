@@ -1,0 +1,90 @@
+﻿@using EnigmaStock.Models
+@model Product
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Edit Product</h2>
+            <hr/>
+
+        </div>
+        <input  asp-for="Id" hidden/>
+
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+           <input asp-for="Name" class="form-control"/>
+           <span asp-validation-for="Name" class="text-danger"></span>     
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="SKU"></label>
+            <div class="input-group">
+                <span class="input-group-text">&#8358;</span>
+                <input asp-for="SKU" class="form-control" />
+            </div>
+            <span asp-validation-for="SKU" class="text-danger"></span>
+        </div>
+
+
+        <div class="mb-3">
+            <label asp-for="CostPrice"></label>
+            <div class="input-group">
+                <span class="input-group-text">&#8358;</span>
+                <input asp-for="CostPrice" class="form-control" />
+            </div>
+            <span asp-validation-for="CostPrice" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="SellingPrice"></label>
+            <div class="input-group">
+                <span class="input-group-text">&#8358;</span>
+                <input asp-for="SellingPrice" class="form-control" />
+            </div>
+            <span asp-validation-for="SellingPrice" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Quantity"></label>
+            <div class="input-group">
+                <span class="input-group-text">&#8358;</span>
+                <input asp-for="Quantity" class="form-control" />
+            </div>
+            <span asp-validation-for="Quantity" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ReorderLevel"></label>
+            <div class="input-group">
+                <span class="input-group-text">&#8358;</span>
+                <input asp-for="ReorderLevel" class="form-control" />
+            </div>
+            <span asp-validation-for="ReorderLevel" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+
+      
+
+        <div class="mb-3">
+            <label asp-for="CategoryId"></label>
+            <select asp-for="CategoryId" class="form-control"> <option value="">...Select Category...</option>
+                @foreach (var category in ViewBag.categories)
+                        {
+                            <option value="@category.Id">@category.Name</option>
+                        }
+                    </select>
+
+
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a asp-controller="Product" asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+
+</form>

@@ -1,0 +1,840 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.dashboard-table {
+    color: #212529;
+}
+
+    .dashboard-table th,
+    .dashboard-table td {
+        color: #212529 !important;
+    }
+
+/* ================================
+   EnigmaStock Dashboard Tables
+   ================================ */
+
+.app-main .table {
+    --bs-table-bg: #ffffff;
+    --bs-table-color: #212529;
+    --bs-table-border-color: #dee2e6;
+    color: #212529;
+    background-color: #ffffff;
+}
+
+    .app-main .table thead th {
+        color: #212529 !important;
+        background-color: #f8f9fa;
+        font-weight: 600;
+    }
+
+    .app-main .table tbody td {
+        color: #212529 !important;
+        background-color: #ffffff;
+    }
+
+    .app-main .table tbody tr:hover td {
+        background-color: #f8f9fa;
+    }
+
+    /* Keep important dashboard values visible */
+    .app-main .table .text-danger {
+        color: #dc3545 !important;
+    }
+
+    .app-main .table .text-success {
+        color: #198754 !important;
+    }
+
+/* =========================================================
+ENIGMASTOCK HOME PAGE
+========================================================= */
+
+.enigma-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 80px 7%;
+    margin-bottom: 60px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #f8fafc 0%, #eef4ff 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+}
+
+.hero-badge,
+.section-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    font-weight: 800;
+    color: #1f2937;
+    margin-bottom: 25px;
+}
+
+    .hero-content h1 span,
+    .enigma-features h2 span,
+    .enigma-business h2 span {
+        color: #007bff;
+    }
+
+.hero-description {
+    max-width: 600px;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+    .hero-actions .btn {
+        border-radius: 8px;
+        padding: 12px 22px;
+        font-weight: 600;
+    }
+
+/* =========================================================
+HERO VISUAL
+========================================================= */
+
+.hero-visual {
+    position: relative;
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-preview {
+    position: relative;
+    width: 310px;
+    height: 230px;
+    padding: 20px;
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.12);
+    transform: rotate(3deg);
+}
+
+.preview-header {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 25px;
+}
+
+    .preview-header span {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #cbd5e1;
+    }
+
+.preview-chart {
+    height: 125px;
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+    gap: 12px;
+    padding: 10px 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.chart-bar {
+    width: 28px;
+    border-radius: 5px 5px 0 0;
+    background: #007bff;
+}
+
+.bar-1 {
+    height: 45%;
+}
+
+.bar-2 {
+    height: 65%;
+}
+
+.bar-3 {
+    height: 55%;
+}
+
+.bar-4 {
+    height: 85%;
+}
+
+.bar-5 {
+    height: 72%;
+}
+
+.preview-line {
+    width: 75%;
+    height: 8px;
+    margin-top: 18px;
+    border-radius: 10px;
+    background: #e2e8f0;
+}
+
+.floating-card {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.12);
+}
+
+    .floating-card i {
+        font-size: 1.4rem;
+        color: #007bff;
+    }
+
+    .floating-card small {
+        display: block;
+        color: #94a3b8;
+        font-size: 0.7rem;
+    }
+
+    .floating-card strong {
+        display: block;
+        color: #1f2937;
+        font-size: 0.85rem;
+    }
+
+.card-one {
+    top: 35px;
+    left: 5px;
+}
+
+.card-two {
+    right: 0;
+    bottom: 35px;
+}
+
+/* =========================================================
+FEATURES
+========================================================= */
+
+.enigma-features {
+    padding: 30px 4% 70px;
+}
+
+    .enigma-features h2,
+    .enigma-business h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        line-height: 1.15;
+        color: #1f2937;
+        margin-bottom: 15px;
+    }
+
+.section-description {
+    color: #64748b;
+    font-size: 1rem;
+}
+
+.feature-card {
+    height: 100%;
+    padding: 30px 25px;
+    border: 1px solid #e5e7eb;
+    border-radius: 15px;
+    background: #ffffff;
+    transition: all 0.25s ease;
+}
+
+    .feature-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+        border-color: #cbd5e1;
+    }
+
+.feature-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    background: #eaf3ff;
+    color: #007bff;
+    font-size: 1.35rem;
+}
+
+.feature-card h4 {
+    color: #1f2937;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #64748b;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* =========================================================
+BUSINESS SECTION
+========================================================= */
+
+.enigma-business {
+    padding: 75px 7%;
+    margin-bottom: 70px;
+    border-radius: 18px;
+    background: #f8fafc;
+}
+
+    .enigma-business p {
+        max-width: 650px;
+        color: #64748b;
+        line-height: 1.8;
+        font-size: 1.05rem;
+    }
+
+.business-points {
+    margin-top: 25px;
+}
+
+    .business-points div {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 15px;
+        color: #334155;
+        font-weight: 600;
+    }
+
+    .business-points i {
+        color: #007bff;
+    }
+
+.business-card {
+    padding: 35px;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+}
+
+.business-card-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background: #eaf3ff;
+    color: #007bff;
+    font-size: 1.4rem;
+}
+
+.business-card h3 {
+    color: #1f2937;
+    font-weight: 700;
+}
+
+.business-card p {
+    font-size: 0.95rem;
+}
+
+.business-card-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+    .business-card-footer strong {
+        color: #1f2937;
+    }
+
+    .business-card-footer span {
+        color: #64748b;
+        font-size: 0.85rem;
+    }
+
+/* =========================================================
+FINAL CTA
+========================================================= */
+
+.enigma-cta {
+    padding: 70px 20px 90px;
+}
+
+    .enigma-cta h2 {
+        color: #1f2937;
+        font-size: 2.3rem;
+        font-weight: 800;
+    }
+
+    .enigma-cta p {
+        color: #64748b;
+        margin-bottom: 25px;
+    }
+
+    .enigma-cta .btn {
+        padding: 12px 25px;
+        border-radius: 8px;
+        font-weight: 600;
+    }
+
+/* =========================================================
+RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    ```
+    .enigma-hero {
+        padding: 65px 6%;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+        margin: auto;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .enigma-business {
+        padding: 60px 6%;
+    }
+
+    ```
+}
+
+@media (max-width: 767px) {
+
+    ```
+    .enigma-hero {
+        padding: 50px 20px;
+        border-radius: 12px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+        .hero-actions .btn {
+            width: 100%;
+        }
+
+    .enigma-features {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .enigma-business {
+        padding: 50px 20px;
+        border-radius: 12px;
+    }
+
+    .business-card {
+        margin-top: 35px;
+        padding: 25px;
+    }
+
+    .enigma-cta {
+        padding: 50px 20px 70px;
+    }
+
+        .enigma-cta h2 {
+            font-size: 2rem;
+        }
+
+    ```
+}
+.sales-revenue-callout {
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   ENIGMASTOCK DASHBOARD
+   Blue Theme
+   ========================================================= */
+
+.dashboard-kpi-card {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #e3eaf5;
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 100%;
+    box-shadow: 0 4px 14px rgba(30, 64, 175, 0.06);
+    transition: all 0.25s ease;
+    overflow: hidden;
+}
+
+    /* subtle blue accent */
+
+    .dashboard-kpi-card::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 4px;
+        height: 100%;
+        background: #2563eb;
+    }
+
+    .dashboard-kpi-card:hover {
+        transform: translateY(-3px);
+        border-color: #c9d8f2;
+        box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12);
+    }
+
+
+/* KPI Icon */
+
+.kpi-icon {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background: #eaf2ff !important;
+    color: #2563eb !important;
+}
+
+
+/* KPI Content */
+
+.kpi-content {
+    min-width: 0;
+}
+
+.kpi-label {
+    display: block;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.kpi-content h3 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #172554;
+}
+
+
+/* =========================================================
+   DASHBOARD SECTION CARDS
+   ========================================================= */
+
+.dashboard-section-card {
+    background: #ffffff;
+    border: 1px solid #e3eaf5;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(30, 64, 175, 0.05);
+}
+
+
+    /* Section Header */
+
+    .dashboard-section-card .card-header {
+        background: #ffffff;
+        border-bottom: 1px solid #e6edf7;
+        padding: 18px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+
+        /* Section titles */
+
+        .dashboard-section-card .card-header h5 {
+            color: #172554;
+            font-weight: 700;
+        }
+
+
+/* =========================================================
+   DASHBOARD TABLES
+   ========================================================= */
+
+.dashboard-table {
+    width: 100%;
+}
+
+
+    /* Table Header */
+
+    .dashboard-table thead th {
+        background: #f3f7ff;
+        color: #334155;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        border-bottom: 1px solid #dbe5f3;
+        padding: 14px 20px;
+        white-space: nowrap;
+    }
+
+
+    /* Table Body */
+
+    .dashboard-table tbody td {
+        color: #334155;
+        padding: 15px 20px;
+        vertical-align: middle;
+        border-bottom: 1px solid #edf1f7;
+    }
+
+
+    /* Remove final border */
+
+    .dashboard-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+
+    /* Table Hover */
+
+    .dashboard-table tbody tr {
+        transition: background-color 0.15s ease;
+    }
+
+        .dashboard-table tbody tr:hover {
+            background: #f7faff;
+        }
+
+
+    /* =========================================================
+   STATUS BADGES
+   ========================================================= */
+
+    .dashboard-table .badge {
+        border-radius: 20px;
+        padding: 6px 10px;
+        font-size: 11px;
+        font-weight: 600;
+    }
+
+
+/* =========================================================
+   STOCK
+   ========================================================= */
+
+.stock-danger {
+    color: #dc3545;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   EMPTY STATES
+   ========================================================= */
+
+.empty-state {
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.empty-state-icon {
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.empty-state h6 {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #172554;
+}
+
+.empty-state p {
+    color: #64748b;
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   DASHBOARD BUTTONS
+   ========================================================= */
+
+.dashboard-section-card .btn-outline-primary {
+    border-color: #2563eb;
+    color: #2563eb;
+    border-radius: 7px;
+    font-weight: 500;
+}
+
+    .dashboard-section-card .btn-outline-primary:hover {
+        background: #2563eb;
+        color: #ffffff;
+    }
+
+
+/* Main New Sale button */
+
+.app-main .btn-primary {
+    background: #2563eb;
+    border-color: #2563eb;
+    border-radius: 8px;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.18);
+}
+
+    .app-main .btn-primary:hover {
+        background: #1d4ed8;
+        border-color: #1d4ed8;
+        transform: translateY(-1px);
+    }
+
+
+/* =========================================================
+   DASHBOARD RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 767.98px) {
+
+    .dashboard-kpi-card {
+        padding: 16px;
+    }
+
+    .kpi-icon {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+        font-size: 18px;
+    }
+
+    .kpi-content h3 {
+        font-size: 24px;
+    }
+
+    .dashboard-section-card .card-header {
+        padding: 15px;
+    }
+
+    .dashboard-table thead th,
+    .dashboard-table tbody td {
+        padding: 12px 14px;
+    }
+}
+
+/* =========================================================
+   DASHBOARD PAGE BACKGROUND
+   ========================================================= */
+
+.dashboard-page {
+    background: radial-gradient( circle at top right, rgba(37, 99, 235, 0.08), transparent 35% ), #f4f7fc;
+    min-height: calc(100vh - 120px);
+    padding: 4px 0 30px;
+}
+
+/* =========================================================
+   DASHBOARD STATUS BADGES
+   ========================================================= */
+
+.dashboard-table .badge {
+    background: #ffffff !important;
+    border: 1px solid #dbe3ef;
+    border-radius: 20px;
+    padding: 6px 11px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+    /* Low Stock */
+
+    .dashboard-table .badge.bg-danger-subtle {
+        color: #dc3545 !important;
+        border-color: #f1b8bf;
+        background: #ffffff !important;
+    }
+
+
+    /* Completed */
+
+    .dashboard-table .badge.bg-success-subtle {
+        color: #198754 !important;
+        border-color: #a9d8c0;
+        background: #ffffff !important;
+    }
+
+
+    /* Pending */
+
+    .dashboard-table .badge.bg-warning-subtle {
+        color: #b58105 !important;
+        border-color: #ead28c;
+        background: #ffffff !important;
+    }
+/* =========================================================
+   SALES REVENUE CALLOUT
+   ========================================================= */
+
+.sales-revenue-callout {
+    display: block;
+    color: #2563eb;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+}

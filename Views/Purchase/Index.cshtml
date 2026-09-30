@@ -1,0 +1,46 @@
+﻿@using EnigmaStock.Models
+@model List<Purchase>
+
+    <div class="container p-3">
+
+        <div class="row pt-4">
+
+            <div class="col-6">
+                <h2 class="text-primary">Purchase List</h2>
+
+            </div>
+
+            <div class="col-6 text-end">
+                <a asp-controller="Purchase" asp-action="Create"  class="btn btn-primary">New Purchase</a>
+
+            </div>
+
+        </div>
+
+        <br />
+        <table class="table table-boarded table-striped">
+
+        <thead>
+            <tr>
+                <th>Reference Number</th>
+                <th>Supplier</th>
+                <th>Purchase Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var Purchase in Model)
+            {
+            <tr>
+                <td>@Purchase.ReferenceNumber</td>
+                <td>@Purchase.Supplier?.Name</td>
+                <td>@Purchase.PurchaseDate.ToString("dd/MM/yyyy")</td>
+                <td><a asp-controller="Purchase" asp-action="Details" asp-route-id="@Purchase.Id" class="btn btn-outline-primary">Details</a>
+                        <a asp-controller="Purchase" asp-action="Edit" asp-route-id="@Purchase.Id" class="btn btn-outline-primary">Edit</a>
+                    </td>
+            </tr>
+        }
+        </tbody>
+</table>
+    </div>

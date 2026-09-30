@@ -1,0 +1,47 @@
+﻿@using EnigmaStock.Models;
+@model StockMovement
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Stock Out</h2>
+
+        </div>
+
+    </div>
+    <br />
+
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="ProductId"></label>
+
+            <select asp-for="ProductId" class="form-control">
+                <option value="">...Select Product...</option>
+
+                @foreach (var product in ViewBag.Products)
+                {
+                    <option value="@product.Id">@product.Name</option>
+                }
+
+            </select>
+            <span asp-validation-for="ProductId" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Quantity"></label>
+            <input asp-for="Quantity" class="form-control" type="number" min="1" />
+            <span asp-validation-for="Quantity" class="text-danger"></span>
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="Note"></label>
+            <textarea asp-for="Note" class="form-control"> </textarea>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Record Stock Out</button>
+        <a asp-controller="StockMovement" asp-action="Index" class="btn btn-secondary">Back To History</a>
+
+    </form>
+
+</div>

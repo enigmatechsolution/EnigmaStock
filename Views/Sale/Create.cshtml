@@ -1,0 +1,50 @@
+﻿@model Sale
+
+<div class="container">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Creat Sale</h2>
+
+        </div>
+
+    </div>
+    <br />
+
+    <form method="post" asp-action="Create">
+        <div class="border p-3">
+
+           
+
+            <div class="mb-3">
+                <label asp-for="CustomerName"></label>
+                <input asp-for="CustomerName" class="form-control" />
+                
+
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="CustomerPhone"></label>
+                <input asp-for="CustomerPhone" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="PaymentMethod" class="form-control">Payment Method</label>
+                <select asp-for="PaymentMethod" class="form-control">
+                    <option value="">...Select Payment Method...</option>
+                    <option value="Cash">Cash</option>
+                    <option value="Card">Card</option>
+                    <option value="Transfer">Transfer</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+
+
+            <button type="submit" class="btn btn-primary">Create Sale</button>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+
+        </div>
+
+    </form>
+
+</div>

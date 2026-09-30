@@ -1,0 +1,32 @@
+﻿@model PurchaseItem
+
+<div class="container">
+
+    <div class="row pt-4">
+
+        <div class="col-6">
+            <h2 class="text-danger">Delete Purchase Item</h2>
+
+        </div>
+
+    </div>
+    <br />
+
+    <div class="border p-3">
+        <h4>Are you sure you want delelete item</h4>
+
+        <p><strong>Product:</strong>@Model.product?.Name</p>
+        <p><strong>Quantity:</strong>@Model.Quantity</p>
+        <p><strong>Cost Price:</strong>@Model.CostPrice.ToString("N2")</p>
+
+        <form method="post" asp-action="DeleteItem">
+            <input type="hidden" asp-for="Id"/>
+
+
+            <button type="submit" class="btn btn-danger">Yes Delete</button>
+            <a asp-action="Details" asp-route-id="@Model.PurchaseId" class="btn btn-secondary">Cancel</a>
+        </form>
+
+    </div>
+
+</div>
