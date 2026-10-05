@@ -260,9 +260,8 @@ The interface includes:
 
 ### Screenshots
 
-> Screenshots of the application will be added here.
 
-> **Home**
+**Home**
 
 `![Home](screenshots/home.png)`
 
