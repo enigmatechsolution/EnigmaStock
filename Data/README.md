@@ -263,23 +263,23 @@ The interface includes:
 
 **Home**
 
-`![Home](screenshots/home.png)`
+![Home](screenshots/home.png)
 
 **Dashboard**
 
-`![Dashboard](screenshots/dashboard.png)`
+![Dashboard](screenshots/dashboard.png)
 
 **Products**
 
-`![Products](screenshots/products.png)`
+![Products](screenshots/products.png)
 
 **Sales**
 
-`![Sales](screenshots/sales.png)`
+![Sales](screenshots/sales.png)
 
 **Invoice**
 
-`![Invoice](screenshots/invoice.png)`
+![Invoice](screenshots/invoice.png)
 
 ---
 
