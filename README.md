@@ -276,7 +276,7 @@ The interface includes:
 ![Invoice](invoice.png)
 
 ### Stock Movement History
-![Stock Movement History](StockMovementHistory.png)
+![Stock Movement History](Stock%20Movement%20History%20.png)
 ---
 
 ## Getting Started
