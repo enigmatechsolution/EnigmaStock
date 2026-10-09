@@ -261,24 +261,10 @@ The interface includes:
 ### Screenshots
 
 
-**Home**
-
-![Home](screenshots/home.png)
-
-**Dashboard**
-
+![EnigmaStock Home](screenshots/home.png)
 ![Dashboard](screenshots/dashboard.png)
-
-**Products**
-
 ![Products](screenshots/products.png)
-
-**Sales**
-
 ![Sales](screenshots/sales.png)
-
-**Invoice**
-
 ![Invoice](screenshots/invoice.png)
 
 ---
