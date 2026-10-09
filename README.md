@@ -262,12 +262,21 @@ The interface includes:
 
 ### Home
 ![EnigmaStock Home](home.png)
+
 ### Dashboard
 ![Dashboard](dashboard.png)
+
+### Products
 ![Products](products.png)
+
+### Sales
 ![Sales](sales.png)
+
+### Invoice
 ![Invoice](invoice.png)
 
+### Stock Movement History
+![Stock Movement History](StockMovementHistory.png)
 ---
 
 ## Getting Started
